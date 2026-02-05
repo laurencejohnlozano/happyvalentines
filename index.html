@@ -792,6 +792,31 @@
             </div>
             
             <button class="btn-continue" id="giftContinueBtn" disabled onclick="showFinal()">Finish</button>
+            <script>
+function showFinal() {
+    let giftDisplay = selectedGift === 'Other' ? otherGiftText : selectedGift;
+
+ const message = `💖 Valentine Answer 💖
+She said YES 💕
+Date: February ${selectedDate}, 2025
+Gift: ${giftDisplay}
+
+I love you 💖`;
+
+
+    const fbUsername = "https://www.facebook.com/ljlozanoTenZedZombies/"; // change this
+
+    const messengerURL = `https://m.me/${fbUsername}?ref=${encodeURIComponent(message)}`;
+
+    // Optional but recommended (auto-copy message)
+    navigator.clipboard.writeText(message);
+
+    window.open(messengerURL, "_blank");
+
+    goToPage(4);
+}
+</script>
+
         </div>
     </div>
     
