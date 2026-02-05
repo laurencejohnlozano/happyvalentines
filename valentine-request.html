@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine? 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="hearts-bg" id="heartsContainer"></div>
+    
+    <!-- Page 1: Initial Request -->
+    <div class="page active" id="page1">
+        <div class="request-container">
+            <h1>Hi My Love<br>Happy Valentine's Day</h1>
+            <p class="subtitle">Can you be my Valentine?</p>
+            <p class="dinner-note">Dinner's on me okay?</p>
+            <p class="love-message">I LOVE YOU SO MUCH</p>
+            <div class="button-group">
+                <button class="btn btn-yes" onclick="goToPage(2)">Yes! 💕</button>
+                <button class="btn btn-no" onclick="handleNo()">No</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 2: Calendar Selection -->
+    <div class="page" id="page2">
+        <div class="calendar-container">
+            <h2>When are you available?</h2>
+            <div class="calendar-header">February 2025</div>
+            <div class="calendar-grid" id="calendarGrid"></div>
+            <button class="btn-continue" id="continueBtn" disabled onclick="goToPage(3)">Continue</button>
+        </div>
+    </div>
+    
+    <!-- Page 3: Gift Selection -->
+    <div class="page" id="page3">
+        <div class="gifts-container">
+            <h2>Hi Love<br>Pick what you want</h2>
+            <div class="gift-options">
+                <div class="gift-card" onclick="selectGift(this, 'Makeup')">
+                    <div class="gift-icon">💄</div>
+                    <div class="gift-name">Makeup</div>
+                </div>
+                <div class="gift-card" onclick="selectGift(this, 'Flowers')">
+                    <div class="gift-icon">💐</div>
+                    <div class="gift-name">Flowers</div>
+                </div>
+                <div class="gift-card" onclick="selectGift(this, 'Chocolates')">
+                    <div class="gift-icon">🍫</div>
+                    <div class="gift-name">Chocolates</div>
+                </div>
+                <div class="gift-card" onclick="selectGift(this, 'Other')">
+                    <div class="gift-icon">✨</div>
+                    <div class="gift-name">Other</div>
+                </div>
+            </div>
+            
+            <!-- Other input field (hidden by default) -->
+            <div class="other-input-container" id="otherInputContainer" style="display: none;">
+                <label for="otherInput">Please tell me what you'd like:</label>
+                <input type="text" id="otherInput" placeholder="Type here...">
+            </div>
+            
+            <button class="btn-continue" id="giftContinueBtn" disabled onclick="showFinal()">Finish</button>
+        </div>
+    </div>
+    
+    <!-- Page 4: Final Confirmation -->
+    <div class="page" id="page4">
+        <div class="final-container">
+            <div class="heart-burst">💖</div>
+            <h1>It's a Date!</h1>
+            <div class="final-details" id="finalDetails">
+                <!-- Details will be inserted here -->
+            </div>
+            <div class="heart-burst">💕</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
